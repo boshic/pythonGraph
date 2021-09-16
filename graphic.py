@@ -41,7 +41,7 @@ def main():
     path = os.getcwd()
     pattern = "*.jpg"
     listOfEntries = sorted(os.scandir(path), key=lambda d: d.stat().st_mtime)
-    # graphParams["depthCorrectorKb"] = np.mean(map(lambda entry: os.stat(entry.name).st_size if isItNeededFile(entry, pattern) else Next, listOfEntries)
+
     for entry in listOfEntries:
         if isItNeededFile(entry, pattern):
             names.append(entry.name[15:20])
@@ -49,7 +49,7 @@ def main():
 
     print(rng)
     # print(names)
-
+    # graphParams["depthCorrectorKb"] = np.mean(map(lambda entry: os.stat(entry.name).st_size if isItNeededFile(entry, pattern) else Next, listOfEntries)
     drawGraph(names, rng)
 
 main()
